@@ -1,6 +1,9 @@
+* {
+  margin: 0;
+}
+
 body {
   background: url(/img/bg.png) repeat scroll 0 0;
-  margin: 0;
 }
 
 footer {
@@ -13,6 +16,19 @@ footer {
   min-width: 960px;
   text-align: center;
   width: 100%;
+}
+
+h2 {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+}
+
+h3 {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  font-style: italic;
 }
 
 nav {
@@ -32,13 +48,13 @@ nav ul {
 }
 
 nav ul li {
-  color: white;
+  color: #fff;
   display: inline;
   margin-left: -5px;
 }
 
 nav ul li a {
-  color: white;
+  color: #fff;
   display: inline-block;
   font-family: "Inconsolata", sans-serif;
   height: 50px;
@@ -125,18 +141,61 @@ nav ul li a:hover {
   position: relative;
 }
 
+.center-text {
+  text-align: center;
+}
+
+.column {
+  margin: 0 auto;
+  padding: 0px 75px 50px 75px;
+}
+
 .content-wrapper {
   min-height: calc(100vh - 310px);
 }
 
-.cursor {
-  animation: blink 1s infinite;
-  -moz-animation: blink 1s infinite;
-  -webkit-animation: blink 1s infinite;
+.divider {
+  background: #c80a48;
+  display: block;
+  height: 2px;
+  margin: 20px auto;
+  width: 150px;
+}
+
+.emphasis {
   color: #c80a48;
 }
 
-.header-emphasis {
+.error-code {
+  color: #c80a48;
+  display: block;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 190px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.error-message {
+  color: #a1a1a1;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  padding-bottom: 100px;
+}
+
+.fa-icon {
+  color: #a1a1a1;
+  padding: 10px 10px 10px 10px;
+}
+
+.fa-icon:hover {
+  color: #c80a48;
+}
+
+.fa-icon a {
+  color: #a1a1a1;
+}
+
+.fa-icon a:hover {
   color: #c80a48;
 }
 
@@ -256,6 +315,11 @@ nav ul li a:hover {
   width: 960px;
 }
 
+.icon-bar {
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
 .layout {
   background: linear-gradient(to right, rgba(0,0,0,0), #0d0c0d 3%, #0d0c0d 97%, rgba(0,0,0,0));
   margin: 0 auto;
@@ -278,6 +342,11 @@ nav ul li a:hover {
 
 .push {
   height: 60px;
+}
+
+.text-content {
+  color: #a1a1a1;
+  font-family: "Open Sans", sans-serif;
 }
 
 @keyframes blink {
