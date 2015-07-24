@@ -19,7 +19,7 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
 
 	console.log( 'got webhook for rtaylordev from %s', req.headers['x-real-ip'] );
 
-	if ( calcSignature.equals( servSignature ) )
+	if ( calcSignature.equal( servSignature ) )
 		console.log( 'signatures match' );
 	else
 		console.log( 'signature mismatch error!' );
