@@ -9,11 +9,11 @@ body {
 footer {
   border-top: 2px solid #282428;
   /*background: #c80a48;*/
-  background: #171717;
-  /*background-color:#171717;
+  /*background: #171717;*/
+  background-color:#171717;
   background-image: linear-gradient(90deg, rgba(200,10,72,.5) 50%, transparent 50%),
 linear-gradient(rgba(200,10,72,.5) 50%, transparent 50%);
-  background-size:7px 7px;*/
+  background-size:7px 7px;
   color: #a1a1a1;
   font-size: 15px;
   font-style: italic;
