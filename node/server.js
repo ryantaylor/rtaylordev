@@ -36,8 +36,6 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
 	catch ( exception ) {
 		res.status( 500 ).send( 'The action could not be completed' );
 	}
-
-	res.status( 200 ).send( 'OK' );
 });
 
 app.listen( 3999 );
