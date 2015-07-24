@@ -22,7 +22,7 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
 
 	if ( calcSignature.equal( servSignature ) ) {
 		var options = { env: process.env };
-		exec( 'cd /home/ryan/web/rtaylordev && git pull', options, function ( error, stdout, stderr ) ) {
+		exec( 'cd /home/ryan/web/rtaylordev && git pull', options, function ( error, stdout, stderr ) {
 			console.log( 'stdout: ' + stdout );
 			console.log( 'stderr: ' + stderr );
 			console.log( 'error: ' + error );
