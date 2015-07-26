@@ -1,20 +1,44 @@
+/******************************/
+/* ryantaylordev.ca CSS       */
+/* Copyright 2015 Ryan Taylor */
+/******************************/
+
+/************************/
+/* Wildcard assignments */
+/************************/
+
 * {
   margin: 0;
+  padding: 0;
+}
+
+/**********************/
+/* Container elements */
+/**********************/
+
+body,
+html {
+  height: 100%;
 }
 
 body {
   background: url(/img/bg.png) repeat scroll 0 0;
 }
 
+/********************/
+/* General elements */
+/********************/
+
 footer {
   border-top: 2px solid #282428;
   /*background: #c80a48;*/
   /*background: #171717;*/
-  background-color:#171717;
+  background-color: #171717;
   background-image: linear-gradient(90deg, rgba(200,10,72,.5) 50%, transparent 50%),
 linear-gradient(rgba(200,10,72,.5) 50%, transparent 50%);
-  background-size:7px 7px;
+  background-size: 7px 7px;
   color: #a1a1a1;
+  font-family: "Open Sans" sans-serif;
   font-size: 15px;
   font-style: italic;
   height: 58px;
@@ -24,17 +48,29 @@ linear-gradient(rgba(200,10,72,.5) 50%, transparent 50%);
   width: 100%;
 }
 
-h2 {
+h2,
+h3 {
   color: #fff;
   font-family: "Open Sans", sans-serif;
+}
+
+h2 {
   font-size: 30px;
 }
 
 h3 {
-  color: #fff;
-  font-family: "Open Sans", sans-serif;
   font-size: 25px;
   font-style: italic;
+}
+
+header {
+  height: 250px;
+  left: 0;
+  /*margin: 0 auto;*/
+  min-width: 960px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 nav {
@@ -96,31 +132,12 @@ nav ul li a:hover {
   background-color: #c80a48;
 }
 
+/*************/
+/* ID styles */
+/*************/
+
 #content {
-  min-width: 960px;
-  width: 100%;
-}
-
-#header-bar {
-  background: #171717;
-  border-bottom: 2px solid #282428;
-  height: 150px;
-  margin: 0 auto;
-  min-width: 960px;
-  width: 100%;
-}
-
-#photo-header {
-  background: #2e2e2e;
-  border-radius: 50%;
-  height: 160px;
-  margin: 0 auto;
-  padding: 5px;
-  position: relative;
-  text-align: center;
-  top: -85px;
-  width: 160px;
-  z-index: 1;
+  padding: 250px 75px 50px 75px;
 }
 
 #photo-headshot {
@@ -134,30 +151,38 @@ nav ul li a:hover {
   z-index: 2;
 }
 
+#push {
+  height: 60px;
+}
+
 #topbar {
-  height: 250px;
-  margin: 0 auto;
+  background: #171717;
+  border-bottom: 2px solid #282428;
+  height: 150px;
+  /*margin: 0 auto;*/
   min-width: 960px;
   width: 100%;
 }
 
 #wrapper {
+  background: linear-gradient(to right, rgba(0,0,0,0), #0d0c0d 3%, #0d0c0d 97%, rgba(0,0,0,0));
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
   margin: 0 auto -60px;
-  min-height: 100vh;
-  position: relative;
+  width: 960px;
 }
 
-.center-text {
+/****************/
+/* Class styles */
+/****************/
+
+.center {
   text-align: center;
 }
 
 .column {
   margin: 0 auto;
-  padding: 0px 75px 50px 75px;
-}
-
-.content-wrapper {
-  min-height: calc(100vh - 310px);
 }
 
 .divider {
@@ -326,13 +351,6 @@ nav ul li a:hover {
   padding-top: 50px;
 }
 
-.layout {
-  background: linear-gradient(to right, rgba(0,0,0,0), #0d0c0d 3%, #0d0c0d 97%, rgba(0,0,0,0));
-  margin: 0 auto;
-  position: relative;
-  width: 960px;
-}
-
 .nav-gradient-border {
   background: linear-gradient(to right, rgba(0,0,0,0), #282428 10%, #282428 90%, rgba(0,0,0,0));
   height: 2px;
@@ -344,16 +362,32 @@ nav ul li a:hover {
 
 .nav-wrapper {
   height: 98px;
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
 }
 
-.push {
-  height: 60px;
+.photo-wrapper {
+  background: #2e2e2e;
+  border-radius: 50%;
+  height: 160px;
+  margin: 0 auto;
+  padding: 5px;
+  position: relative;
+  text-align: center;
+  top: -85px;
+  width: 160px;
+  z-index: 1;
 }
 
 .text-content {
   color: #a1a1a1;
   font-family: "Open Sans", sans-serif;
 }
+
+/**************/
+/* Animations */
+/**************/
 
 @keyframes blink {
   to { opacity: .0 }
@@ -375,8 +409,12 @@ nav ul li a:hover {
   100% { width: 0; }
 }
 
+/*****************/
+/* Media queries */
+/*****************/
+
 @media (max-width: 960px) {
-  .content-wrapper {
+  #wrapper {
     background: #0d0c0d;
   }
   
