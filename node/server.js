@@ -19,8 +19,6 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
     var calcSignature = new Buffer( 'sha1=' + hmac.digest( 'hex' ) );
     var servSignature = new Buffer( req.headers['x-hub-signature'] );
 
-    console.log( 'got webhook for rtaylordev from %s', req.headers['x-real-ip'] );
-
     if ( calcSignature.equal( servSignature ) ) {
       var options = { env: process.env };
       exec( 'cd /home/ryan/web/rtaylordev && git pull', options, function ( error, stdout, stderr ) {
@@ -39,4 +37,3 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
 });
 
 app.listen( 3999 );
-console.log( 'Listening on port 3999' );
