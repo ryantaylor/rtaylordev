@@ -47,13 +47,13 @@
       <span class="divider"></span>
       <form id="contact" method="post" action="/contact/send">
         <div class="form-element form-top">
-          <input id="name" placeholder="Name">
+          <input id="name" name="contact[name]" placeholder="Name">
         </div>
         <div class="form-element">
-          <input id="email" placeholder="Email Address">
+          <input id="email" name="contact[email]" placeholder="Email Address">
         </div>
         <div class="form-element">
-          <textarea id="message" placeholder="Message"></textarea>
+          <textarea id="message" name="contact[message]" placeholder="Message"></textarea>
         </div>
         <button id="send" type="submit">Send</button>
       </form>

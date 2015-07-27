@@ -41,7 +41,12 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
 app.post( '/contact/send', function ( req, res ) {
   console.log( 'got contact post' );
   
-  var transporter = nodemailer.createTransport({});
+  var transporter = nodemailer.createTransport({
+    tls: {
+      rejectUnauthorized: false
+    }
+  });
+  
   transporter.sendMail({
     from: 'contact@ryantaylordev.ca',
     to: 'ryan@ryantaylordev.ca',
