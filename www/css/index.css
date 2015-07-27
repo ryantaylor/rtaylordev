@@ -278,6 +278,10 @@ textarea {
   padding: 20px;
 }
 
+.form-junk {
+  display: none;
+}
+
 .form-top {
   border-top: 1px solid #282428;
 }

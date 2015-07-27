@@ -56,6 +56,13 @@ app.post( '/contact/send', function ( req, res ) {
   var email = req.body.contact.email;
   var name = req.body.contact.name;
   var message = req.body.contact.message;
+  var antispam = req.body.contact.junk;
+  
+  if ( antispam != '' ) {
+    console.log( 'spam detected, aborting' );
+    res.redirect( '/contact' );
+    return;
+  }
   
   //var name = validator.escape( req.body.contact.name );
   //var email = validator.escape( req.body.contact.email );
@@ -65,12 +72,14 @@ app.post( '/contact/send', function ( req, res ) {
     console.log( 'valid email ' + email );
     email = validator.normalizeEmail( email );
   }
+  else {
+    console.log( 'got invalid email' );
+    res.redirect( '/contact' );
+    return;
+  }
   
   var subject = 'Contact - ' + name;
   var body = 'From: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
-  
-  console.log( subject );
-  console.log( body );
   
   transporter.sendMail({
     from: 'contact@ryantaylordev.ca',
