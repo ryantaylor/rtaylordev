@@ -70,7 +70,7 @@ app.post( '/contact/send', function ( req, res ) {
   
   if ( validator.isEmail( email ) ) {
     console.log( 'valid email ' + email );
-    email = validator.normalizeEmail( email );
+    //email = validator.normalizeEmail( email );
   }
   else {
     console.log( 'got invalid email' );
