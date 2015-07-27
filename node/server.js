@@ -53,6 +53,10 @@ app.post( '/contact/send', function ( req, res ) {
     }
   });
   
+  var email = req.body.contact.email;
+  var name = req.body.contact.name;
+  var message = req.body.contact.message;
+  
   //var name = validator.escape( req.body.contact.name );
   //var email = validator.escape( req.body.contact.email );
   //var message = validator.escape( req.body.contact.message );
