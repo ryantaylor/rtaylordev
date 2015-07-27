@@ -63,7 +63,7 @@ app.post( '/contact/send', function ( req, res ) {
   
   if ( validator.isEmail( email ) ) {
     console.log( 'valid email ' + email );
-    email = validator.normalizeEmail();
+    email = validator.normalizeEmail( email );
   }
   
   var subject = 'Contact - ' + name;
