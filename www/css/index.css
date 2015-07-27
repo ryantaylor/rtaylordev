@@ -73,6 +73,21 @@ header {
   width: 100%;
 }
 
+input {
+  height: 34px;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.5em;
+  margin: 0 auto;
+  width: 100%;
+}
+
 nav {
   height: 50px;
   min-width: 960px;
@@ -103,6 +118,7 @@ nav ul li a {
   line-height: 50px;
   text-align: center;
   text-decoration: none;
+  transition: all 0.5s ease 0s;
   width: 120px;
 }
 
@@ -132,6 +148,11 @@ nav ul li a:hover {
   background-color: #c80a48;
 }
 
+textarea {
+  height: 136px;
+  resize: none;
+}
+
 /*************/
 /* ID styles */
 /*************/
@@ -152,6 +173,28 @@ nav ul li a:hover {
 
 #push {
   height: 60px;
+}
+
+#send {
+  background: transparent;
+  border: 2px solid #c80a48;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 25px;
+  padding: 5px 15px 5px 15px;
+  transition: all 0.5s ease 0s;
+  vertical-align: middle;
+  width: auto;
+}
+
+#send:hover {
+  background: #c80a48;
+  border-color: white;
 }
 
 #topbar {
@@ -223,10 +266,20 @@ nav ul li a:hover {
 
 .fa-icon a {
   color: #a1a1a1;
+  transition: all 0.5s ease 0s;
 }
 
 .fa-icon a:hover {
   color: #c80a48;
+}
+
+.form-element {
+  border-bottom: 1px solid #282428;
+  padding: 20px;
+}
+
+.form-top {
+  border-top: 1px solid #282428;
 }
 
 .header-left {

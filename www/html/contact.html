@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
 <link rel="stylesheet" href="/css/index.css">
-<title>ryan taylor</title>
+<title>ryan taylor - contact</title>
 
 <div id="wrapper">
   <header>
@@ -34,7 +34,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="/resume">Resume</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-gradient-border"></div>
@@ -43,21 +43,27 @@
   
   <section id="content">
     <div class="column center">
-      <h2>Welcome</h2>
-        <span class="divider"></span>
-        <p class="text-content">I am a software developer, and this is my playground. A place to experiment, learn, and grow. A place for ideas, good or bad, and constant evolution. I am a multidisciplinary developer who lives for variety and new experiences; the work displayed here represents a mere fraction of my technical interests. I'm always looking for new opportunities, so get in touch with me if you have a project you'd like to discuss.</p>
-        <span class="divider"></span>
-        <p class="text-content">This website was written from scratch using modern web technology, without any third-party code. Browser compatibility is constantly being improved, but for the best viewing experience ensure your browser of choice is fully updated.</p>
-        <span class="divider"></span>
-        <h3>Enjoy your stay!</h3>
-        
-        <div class="icon-bar">
-          <span class="fa-icon"><a href="https://github.com/ryantaylor"><i class="fa fa-github fa-4x"></i></a></span>
-          <span class="fa-icon"><a href="https://ca.linkedin.com/in/ryantaylor9"><i class="fa fa-linkedin fa-4x"></i></a></span>
-          <span class="fa-icon"><a href="https://www.youtube.com/user/InverseGR"><i class="fa fa-youtube fa-4x"></i></a></span>
-          <span class="fa-icon"><a href="http://www.twitch.tv/inversetv"><i class="fa fa-twitch fa-4x"></i></a></span>
-          <span class="fa-icon"><a href="https://twitter.com/inversetv"><i class="fa fa-twitter fa-4x"></i></a></span>
+      <h2>Contact</h2>
+      <span class="divider"></span>
+      <form id="contact" method="post" action="/contact/send">
+        <div class="form-element form-top">
+          <input id="name" placeholder="Name">
         </div>
+        <div class="form-element">
+          <input id="email" placeholder="Email Address">
+        </div>
+        <div class="form-element">
+          <textarea id="message" placeholder="Message"></textarea>
+        </div>
+        <button id="send" type="submit">Send</button>
+      </form>
+      <div class="icon-bar">
+        <span class="fa-icon"><a href="https://github.com/ryantaylor"><i class="fa fa-github fa-4x"></i></a></span>
+        <span class="fa-icon"><a href="https://ca.linkedin.com/in/ryantaylor9"><i class="fa fa-linkedin fa-4x"></i></a></span>
+        <span class="fa-icon"><a href="https://www.youtube.com/user/InverseGR"><i class="fa fa-youtube fa-4x"></i></a></span>
+        <span class="fa-icon"><a href="http://www.twitch.tv/inversetv"><i class="fa fa-twitch fa-4x"></i></a></span>
+        <span class="fa-icon"><a href="https://twitter.com/inversetv"><i class="fa fa-twitter fa-4x"></i></a></span>
+      </div>
     </div>
   </section>
   

@@ -6,6 +6,8 @@ var express = require( 'express' );
 var exec = require( 'child_process' ).exec;
 var bodyParser = require( 'body-parser' );
 var crypto = require( 'crypto' );
+var nodemailer = require( 'nodemailer' );
+var smtpTransport = require( 'nodemailer-smtp-transport' );
 
 var app = express();
 
@@ -34,6 +36,21 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
   catch ( exception ) {
     res.status( 500 ).send( 'The action could not be completed' );
   }
+});
+
+app.post( '/contact/send', function ( req, res ) {
+  console.log( 'got contact post' );
+  
+  var transporter = nodemailer.createTransport({});
+  transporter.sendMail({
+    from: 'contact@ryantaylordev.ca',
+    to: 'ryan@ryantaylordev.ca',
+    subject: 'contact form',
+    text: 'someone clicked send'
+  });
+  
+  //res.status( 200 ).send( 'success' );
+  res.redirect( '/contact' );
 });
 
 app.listen( 3999 );
