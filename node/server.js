@@ -53,19 +53,17 @@ app.post( '/contact/send', function ( req, res ) {
     }
   });
   
-  var name = validator.escape( req.body.contact.name );
-  var email = validator.escape( req.body.contact.email );
-  var message = validator.escape( req.body.contact.message );
+  //var name = validator.escape( req.body.contact.name );
+  //var email = validator.escape( req.body.contact.email );
+  //var message = validator.escape( req.body.contact.message );
   
   if ( validator.isEmail( email ) ) {
-    console.log( 'valid email' );
+    console.log( 'valid email ' + email );
     email = validator.normalizeEmail();
   }
   
   var subject = 'Contact - ' + name;
-  var body = 'From: ' + name + '\n\
-              Email: ' + email + '\n\
-              Message: ' + message;
+  var body = 'From: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
   
   console.log( subject );
   console.log( body );
