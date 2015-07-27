@@ -8,12 +8,18 @@ var bodyParser = require( 'body-parser' );
 var crypto = require( 'crypto' );
 var nodemailer = require( 'nodemailer' );
 var smtpTransport = require( 'nodemailer-smtp-transport' );
+var validator = require( 'validator' );
 
 var app = express();
 
 app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded({
+  extended: true
+}) );
 
 app.post( '/webhooks/rtaylordev', function ( req, res ) {
+  console.log( 'got rtaylordev webhook post' );
+  
   try {
     var hmac = crypto.createHmac( 'sha1', process.env.WHSECRET_RTAYLORDEV );
     hmac.update( JSON.stringify( req.body ) );
@@ -47,11 +53,28 @@ app.post( '/contact/send', function ( req, res ) {
     }
   });
   
+  var name = validator.escape( req.body.contact.name );
+  var email = validator.escape( req.body.contact.email );
+  var message = validator.escape( req.body.contact.message );
+  
+  if ( validator.isEmail( email ) ) {
+    console.log( 'valid email' );
+    email = validator.normalizeEmail();
+  }
+  
+  var subject = 'Contact - ' + name;
+  var body = 'From: ' + name + '\n\
+              Email: ' + email + '\n\
+              Message: ' + message;
+  
+  console.log( subject );
+  console.log( body );
+  
   transporter.sendMail({
     from: 'contact@ryantaylordev.ca',
     to: 'ryan@ryantaylordev.ca',
-    subject: 'contact form',
-    text: 'someone clicked send'
+    subject: subject,
+    text: body
   });
   
   //res.status( 200 ).send( 'success' );
