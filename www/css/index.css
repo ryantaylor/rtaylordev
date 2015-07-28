@@ -85,7 +85,13 @@ textarea {
   font-family: "Inconsolata", monospace;
   font-size: 1.5em;
   margin: 0 auto;
+  overflow: auto;
   width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
 }
 
 nav {
@@ -113,7 +119,7 @@ nav ul li {
 nav ul li a {
   color: #fff;
   display: inline-block;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace;
   height: 50px;
   line-height: 50px;
   text-align: center;
@@ -242,7 +248,7 @@ textarea {
 .error-code {
   color: #c80a48;
   display: block;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-size: 190px;
   margin: 0 auto;
   padding-top: 100px;
@@ -253,6 +259,11 @@ textarea {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
   padding-bottom: 100px;
+}
+
+.fa-hero {
+  font-size: 300px;
+  padding: 25px;
 }
 
 .fa-icon {
@@ -271,6 +282,10 @@ textarea {
 
 .fa-icon a:hover {
   color: #c80a48;
+}
+
+.fail {
+  color: red;
 }
 
 .form-element {
@@ -292,7 +307,7 @@ textarea {
   -webkit-animation: type 4s steps(60, end);
   bottom: 0;
   color: #fff;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-size: 30px;
   font-weight: 400;
   left: 50px;
@@ -314,7 +329,7 @@ textarea {
   -webkit-animation-fill-mode: forwards;
   bottom: 0;
   color: #fff;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-size: 30px;
   font-weight: 400;
   left: 590px;
@@ -328,7 +343,7 @@ textarea {
 .header-right-code {
   bottom: 0;
   color: #fff;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-size: 30px;
   font-weight: 400;
   left: 770px;
@@ -434,6 +449,10 @@ textarea {
   top: -85px;
   width: 160px;
   z-index: 1;
+}
+
+.success {
+  color: #093;
 }
 
 .text-content {

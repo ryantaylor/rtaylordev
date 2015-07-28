@@ -3,6 +3,8 @@
 require( 'buffer-equal-constant-time' ).install();
 
 var express = require( 'express' );
+var mu = require( 'mustache' );
+var fs = require( 'fs' );
 var exec = require( 'child_process' ).exec;
 var bodyParser = require( 'body-parser' );
 var crypto = require( 'crypto' );
@@ -16,6 +18,10 @@ app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded({
   extended: true
 }) );
+
+////////////////////////////
+// Server action handlers //
+////////////////////////////
 
 app.post( '/webhooks/rtaylordev', function ( req, res ) {
   console.log( 'got rtaylordev webhook post' );
@@ -47,40 +53,63 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
 app.post( '/contact/send', function ( req, res ) {
   console.log( 'got contact post' );
   
+  var antispam = req.body.contact.junk;
+  
+  try {
+    // Check antispam input and abort if it contains text
+    if ( !validator.isNull( antispam ) ) {
+      console.log( 'spam detected, aborting' );
+      res.redirect( '/contact' );
+    }
+    else {
+      // Send email
+      if ( sendContactEmail( req.body.contact.name, req.body.contact.email, req.body.contact.message ) ) {
+        // Mail sent successfully
+        renderTemplate( 'contact_result.html', { success: true, fail: false }, res );
+      }
+      else {
+        // Email validation or send failed
+        renderTemplate( 'contact_result.html', { success: false, fail: true }, res );
+      }
+    }
+  } catch ( err ) {
+    res.status( 500 ).send( 'A fatal server error occurred' );
+  }
+});
+
+/////////////////////////////
+// Server function helpers //
+/////////////////////////////
+
+function sendContactEmail( name, email, message ) {
+  // Set transport to accept unsigned TLS connections
   var transporter = nodemailer.createTransport({
     tls: {
       rejectUnauthorized: false
     }
   });
   
-  var email = req.body.contact.email;
-  var name = req.body.contact.name;
-  var message = req.body.contact.message;
-  var antispam = req.body.contact.junk;
-  
-  if ( antispam != '' ) {
-    console.log( 'spam detected, aborting' );
-    res.redirect( '/contact' );
-    return;
+  // Check validation of form elements
+  if ( validator.isNull( name ) ) {
+    console.log( 'got empty name' );
+    return false;
   }
   
-  //var name = validator.escape( req.body.contact.name );
-  //var email = validator.escape( req.body.contact.email );
-  //var message = validator.escape( req.body.contact.message );
-  
-  if ( validator.isEmail( email ) ) {
-    console.log( 'valid email ' + email );
-    //email = validator.normalizeEmail( email );
+  if ( validator.isNull( message ) ) {
+    console.log( 'got empty message' );
+    return false;
   }
-  else {
+  
+  if ( !validator.isEmail( email ) ) {
     console.log( 'got invalid email' );
-    res.redirect( '/contact' );
-    return;
+    return false;
   }
   
+  // Construct email
   var subject = 'Contact - ' + name;
   var body = 'From: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
   
+  // Send email via SMTP transport to Postfix
   transporter.sendMail({
     from: 'contact@ryantaylordev.ca',
     to: 'ryan@ryantaylordev.ca',
@@ -88,8 +117,20 @@ app.post( '/contact/send', function ( req, res ) {
     text: body
   });
   
-  //res.status( 200 ).send( 'success' );
-  res.redirect( '/contact' );
-});
+  return true;
+}
+
+function renderTemplate( template, data, res ) {
+  var filepath = __dirname + '/../www/tmpl/' + template;
+  
+  fs.readFile( filepath, function ( err, html ) {
+    if ( err ) throw err;
+    res.send( mu.render( html.toString(), data ) );
+  });
+}
+
+/////////////
+// Do work //
+/////////////
 
 app.listen( 3999 );
