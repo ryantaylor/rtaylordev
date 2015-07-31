@@ -51,16 +51,19 @@
       <span class="divider"></span>
       <form id="contact" method="post" action="/contact/send">
         <div class="form-element form-top">
-          <input id="name" name="contact[name]" placeholder="Name">
+          <span class='jsval-message'>Please enter your name</span>
+          <input id="name" class="jsval-required" name="contact[name]" placeholder="Name" required>
         </div>
         <div class="form-element">
-          <input id="email" name="contact[email]" placeholder="Email Address">
+          <span class='jsval-message'>Please enter a valid email address</span>
+          <input id="email" class="jsval-required" name="contact[email]" placeholder="Email Address" type='email' required>
         </div>
         <div class="form-junk">
           <input name="contact[junk]" placeholder="Leave empty if human">
         </div>
         <div class="form-element">
-          <textarea id="message" name="contact[message]" placeholder="Message"></textarea>
+          <span class='jsval-message'>Don't be shy, say something</span>
+          <textarea id="message" class="jsval-required" name="contact[message]" placeholder="Message" required></textarea>
         </div>
         <button id="send" type="submit">Send</button>
       </form>
@@ -89,3 +92,5 @@
   ga('send', 'pageview');
 
 </script>
+
+<script type='text/javascript' src='/js/val.js'></script>

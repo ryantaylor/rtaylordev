@@ -105,6 +105,11 @@ textarea:focus {
   outline: none;
 }
 
+input:required:invalid,
+textarea:required:invalid {
+  box-shadow: none;
+}
+
 nav {
   height: 50px;
   min-width: 960px;
@@ -318,7 +323,8 @@ textarea {
 
 .form-element {
   border-bottom: 1px solid #282428;
-  padding: 20px;
+  padding: 25px;
+  position: relative;
 }
 
 .form-junk {
@@ -448,6 +454,18 @@ textarea {
 .icon-bar {
   margin: 0 auto;
   padding-top: 50px;
+}
+
+.jsval-message {
+  color: #c80a48;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  opacity: 0;
+  padding-left: 24px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  transition: all 0.5s ease 0s;
 }
 
 .nav-gradient-border {
