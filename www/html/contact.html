@@ -52,18 +52,18 @@
       <form id="contact" method="post" action="/contact/send">
         <div class="form-element form-top">
           <span class='jsval-message'>Please enter your name</span>
-          <input id="name" class="jsval-required" name="contact[name]" placeholder="Name" required>
+          <input id="name" class="jsval-text-required" name="contact[name]" placeholder="Name" required>
         </div>
         <div class="form-element">
           <span class='jsval-message'>Please enter a valid email address</span>
-          <input id="email" class="jsval-required" name="contact[email]" placeholder="Email Address" type='email' required>
+          <input id="email" class="jsval-email-required" name="contact[email]" placeholder="Email Address" type='email' required>
         </div>
         <div class="form-junk">
           <input name="contact[junk]" placeholder="Leave empty if human">
         </div>
         <div class="form-element">
           <span class='jsval-message'>Don't be shy, say something</span>
-          <textarea id="message" class="jsval-required" name="contact[message]" placeholder="Message" required></textarea>
+          <textarea id="message" class="jsval-text-required" name="contact[message]" placeholder="Message" required></textarea>
         </div>
         <button id="send" type="submit">Send</button>
       </form>

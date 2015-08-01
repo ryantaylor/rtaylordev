@@ -40,8 +40,14 @@ document.addEventListener( 'DOMContentLoaded', function () {
             valType = elClass.replace( VAL_SELECTOR, '' );
             
             switch ( valType ) {
-              case 'required':
-                valRequired( element );
+              case 'text-required':
+                valTextRequired( element );
+                break;
+              case 'email':
+                valEmail( element, false );
+                break;
+              case 'email-required':
+                valEmail( element, true );
                 break;
               default:
                 break;
@@ -53,51 +59,83 @@ document.addEventListener( 'DOMContentLoaded', function () {
   }
 });
 
-function valRequired( element ) {
+function valTextRequired( element ) {
   
   var messageElement = getMessageElement( element );
   
+  // Listener for when input changes. If input is empty after a change we
+  // want to show the user a validity message.
   element.addEventListener( 'input', function ( e ) {
-    if ( element.value == '' || element.value == null ) {
+    if ( element.value == '' || element.value == null )
       messageElement.style.opacity = 100;
-      console.log( 'bad' );
-    }
-    else {
+    else
       messageElement.style.opacity = 0;
-      console.log( 'good' );
-    }
   });
   
+  // Listener for when input loses focus. This is mainly for when a user
+  // tabs out of an input without entering any text.
+  element.addEventListener( 'blur', function ( e ) {
+    if ( element.value == '' || element.value == null )
+      messageElement.style.opacity = 100;
+    else
+      messageElement.style.opacity = 0;
+  });
+}
+
+function valEmail( element, required ) {
+  
+  var messageElement = getMessageElement( element );
+  // Taken from HTML5 spec
+  var emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  
   element.addEventListener( 'input', function ( e ) {
-    console.log( 'test' );
+    if ( required ) {
+      // If required, just check regex, since it will fail on empty string
+      if ( element.value.match( emailRegex ) != null )
+        messageElement.style.opacity = 0;
+      else
+        messageElement.style.opacity = 100;
+    }
+    else {
+      // If not required, let user leave input empty.
+      if ( element.value == '' ||
+           element.value == null ||
+           element.value.match( emailRegex ) != null )
+        messageElement.style.opacity = 0;
+      else
+        messageElement.style.opacity = 100;
+    }
   });
   
   element.addEventListener( 'blur', function ( e ) {
-    if ( element.value == '' || element.value == null ) {
-      messageElement.style.opacity = 100;
-      console.log( 'bad' );
+    if ( required ) {
+      // If required, just check regex, since it will fail on empty string
+      if ( element.value.match( emailRegex ) != null )
+        messageElement.style.opacity = 0;
+      else
+        messageElement.style.opacity = 100;
     }
     else {
-      messageElement.style.opacity = 0;
-      console.log( 'good' );
+      // If not required, let user leave input empty.
+      if ( element.value == '' ||
+           element.value == null ||
+           element.value.match( emailRegex ) != null )
+        messageElement.style.opacity = 0;
+      else
+        messageElement.style.opacity = 100;
     }
   });
 }
 
-function valEmail( element ) {
-  
-}
-
+// Message element is selected as the first sibling element of the form element's
+// parent node that's found when the parent's child nodes are iterated through.
 function getMessageElement( formElement ) {
-  var messageElement = undefined;
-  
   for ( var i = 0; i < formElement.parentNode.childNodes.length; i ++ ) {
     var node = formElement.parentNode.childNodes[i];
     if ( node.className != undefined && node.className.indexOf( VAL_SELECTOR_MSG ) != -1 ) {
-      messageElement = node;
-      break;
+      return node;
     }
   }
   
-  return messageElement;
+  return undefined;
 }

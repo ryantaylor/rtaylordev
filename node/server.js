@@ -89,6 +89,9 @@ function sendContactEmail( name, email, message ) {
     }
   });
   
+  // Taken from HTML5 spec
+  var emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  
   // Check validation of form elements
   if ( validator.isNull( name ) ) {
     console.log( 'got empty name' );
@@ -100,7 +103,8 @@ function sendContactEmail( name, email, message ) {
     return false;
   }
   
-  if ( !validator.isEmail( email ) ) {
+  //if ( !validator.isEmail( email ) ) {
+  if ( email.match( emailRegex ) == null ) {
     console.log( 'got invalid email' );
     return false;
   }
