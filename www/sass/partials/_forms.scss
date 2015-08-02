@@ -1,0 +1,88 @@
+// _forms.scss
+
+input {
+  height: 34px;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: none;
+  color: $clr-neutral;
+  font-family: $font-family-alt;
+  font-size: 1.5em;
+  margin: 0 auto;
+  overflow: auto;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:required:invalid,
+textarea:required:invalid {
+  box-shadow: none;
+}
+
+textarea {
+  height: 136px;
+  resize: none;
+}
+
+/*************/
+/* ID styles */
+/*************/
+
+#send {
+  background: transparent;
+  border: 2px solid $clr-main;
+  border-radius: 2px;
+  color: $clr-neutral;
+  cursor: pointer;
+  font-family: $font-family-alt;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 25px;
+  padding: 5px 15px 5px 15px;
+  transition: all 0.5s ease 0s;
+  vertical-align: middle;
+  width: auto;
+}
+
+#send:hover {
+  background: $clr-main;
+  border-color: $clr-neutral;
+}
+
+/****************/
+/* Class styles */
+/****************/
+
+.form-element {
+  border-bottom: 1px solid $clr-accent;
+  padding: 25px;
+  position: relative;
+}
+
+.form-junk {
+  display: none;
+}
+
+.form-top {
+  border-top: 1px solid $clr-accent;
+}
+
+.jsval-message {
+  color: $clr-main;
+  font-family: $font-family-base;
+  font-weight: bold;
+  opacity: 0;
+  padding-left: 24px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+}

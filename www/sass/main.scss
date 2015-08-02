@@ -1,0 +1,98 @@
+// main.scss
+
+@import "partials/base";
+
+@import "partials/header";
+@import "partials/content";
+@import "partials/footer";
+
+@import "partials/error";
+@import "partials/forms";
+@import "partials/animations";
+
+/********************/
+/* General elements */
+/********************/
+
+a {
+  color: lighten($clr-main, 20%);
+  text-decoration: none;
+  transition: color 0.25s ease 0s;
+}
+
+a:hover {
+  color: $clr-neutral;
+}
+
+h2,
+h3 {
+  color: $clr-neutral;
+  font-family: $font-family-base;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+  font-style: italic;
+}
+
+/****************/
+/* Class styles */
+/****************/
+
+.center {
+  text-align: center;
+}
+
+.divider {
+  background: $clr-main;
+  display: block;
+  height: 2px;
+  margin: 20px auto;
+  width: 150px;
+}
+
+.emphasis {
+  color: $clr-main;
+}
+
+.fa-hero {
+  font-size: 300px;
+  padding: 25px;
+}
+
+.fa-hero-success {
+  @extend .fa-hero;
+  color: #093;
+}
+
+.fa-hero-fail {
+  @extend .fa-hero;
+  color: $clr-main;
+}
+
+.fa-icon {
+  color: $clr-content;
+  padding: 10px 10px 10px 10px;
+  
+  a {
+    color: $clr-content;
+    transition: all 0.5s ease 0s;
+  }
+  
+  a:hover {
+    color: $clr-main;
+  }
+}
+
+.fa-icon:hover {
+  color: $clr-main;
+}
+
+.icon-bar {
+  margin: 0 auto;
+  padding-top: 50px;
+}

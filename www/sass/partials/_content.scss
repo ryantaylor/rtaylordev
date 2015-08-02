@@ -1,0 +1,22 @@
+// _content.scss
+
+/*************/
+/* ID styles */
+/*************/
+
+#content {
+  padding: 250px 75px 50px 75px;
+}
+
+/****************/
+/* Class styles */
+/****************/
+
+.column {
+  margin: 0 auto;
+}
+
+.text-content {
+  color: $clr-content;
+  font-family: $font-family-base;
+}

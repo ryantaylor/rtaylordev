@@ -1,0 +1,65 @@
+// _base.scss
+
+@import "../modules/all";
+
+$viewport-width: 960px;
+
+/******************/
+/* Element styles */
+/******************/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background: url(/img/bg.png) repeat scroll 0 0;
+  background-color: $clr-bg;
+}
+
+/*************/
+/* ID styles */
+/*************/
+
+#no-js {
+  background-color: $clr-main;
+  color: $clr-neutral;
+  font-family: $font-family-alt;
+  font-size: 1.25em;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+#wrapper {
+  background: $util-gradient-wrapper;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
+  width: $viewport-width;
+}
+
+/*****************/
+/* Media queries */
+/*****************/
+
+@media (max-width: $viewport-width) {
+  #wrapper {
+    background: $clr-bg-content;
+  }
+}
+
