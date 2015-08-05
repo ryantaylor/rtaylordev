@@ -24,6 +24,10 @@ a:hover {
   color: $clr-neutral;
 }
 
+a:hover > .icon {
+  fill: $clr-main;
+}
+
 h2,
 h3 {
   color: $clr-neutral;
@@ -74,22 +78,12 @@ h3 {
   color: $clr-main;
 }
 
-.fa-icon {
-  color: $clr-content;
-  padding: 10px 10px 10px 10px;
-  
-  a {
-    color: $clr-content;
-    transition: all 0.5s ease 0s;
-  }
-  
-  a:hover {
-    color: $clr-main;
-  }
-}
-
-.fa-icon:hover {
-  color: $clr-main;
+.icon {
+  fill: $clr-content;
+  height: 64px;
+  margin: 5px;
+  transition: fill 0.5s ease 0s;
+  width: 64px;
 }
 
 .icon-bar {
