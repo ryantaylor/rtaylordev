@@ -42,6 +42,21 @@
   height: 400px;
 }
 
+.aside-content {
+  color: $clr-content;
+  font-family: $font-family-base;
+  margin: 5px;
+}
+
+.aside-projects {
+  box-shadow: -3px 3px 3px $clr-accent-alt;
+  float: right;
+  height: 250px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  width: 200px;
+}
+
 .column {
   margin: 0 auto;
   width: $column-width;

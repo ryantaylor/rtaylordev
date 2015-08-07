@@ -51,8 +51,51 @@ h3 {
 /* Class styles */
 /****************/
 
+.btn {
+  background: transparent;
+  border: 2px solid $clr-main;
+  border-radius: 2px;
+  color: $clr-neutral;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-family-alt;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 25px;
+  padding: 5px 15px 5px 15px;
+  transition: background 0.5s ease 0s, border-color 0.5s ease 0s;
+  vertical-align: middle;
+  width: auto;
+}
+
+.btn:hover {
+  background: $clr-main;
+  border-color: $clr-neutral;
+}
+
+.btn-fixed {
+  @extend .btn;
+  margin-top: 20px;
+  width: 90px;
+}
+
+.btn-fixed:hover {
+  background: $clr-main;
+  border-color: $clr-neutral;
+}
+
 .center {
   text-align: center;
+}
+
+.coming-soon {
+  color: $clr-main;
+  display: block;
+  font-family: $font-family-alt;
+  font-size: 90px;
+  margin: 0 auto;
+  padding-top: 100px;
 }
 
 .divider {
