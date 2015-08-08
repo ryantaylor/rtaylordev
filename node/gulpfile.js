@@ -5,9 +5,11 @@ var sass = require( 'gulp-sass' );
 var uglify = require( 'gulp-uglify' );
 var rename = require( 'gulp-rename' );
 
-gulp.task( 'default', function () {
-  
-});
+gulp.task( 'default', ['build', 'watch'] );
+
+gulp.task( 'build', ['sass', 'uglify'] );
+
+gulp.task( 'watch', ['sass:watch', 'uglify:watch'] );
 
 gulp.task( 'sass', function () {
   gulp.src( '../www/sass/main.scss' )
@@ -25,4 +27,8 @@ gulp.task( 'uglify', function () {
       .pipe( uglify() )
       .pipe( rename( 'val.min.js' ) )
       .pipe( gulp.dest( '../www/js' ) );
+});
+
+gulp.task( 'uglify:watch', function () {
+  gulp.watch( '../www/js/val.js', ['uglify'] );
 });
