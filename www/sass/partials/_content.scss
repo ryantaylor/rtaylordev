@@ -1,13 +1,5 @@
 // _content.scss
 
-/*************/
-/* ID styles */
-/*************/
-
-#content {
-  padding: 250px 75px 50px 75px;
-}
-
 /****************/
 /* Class styles */
 /****************/
@@ -37,6 +29,22 @@
   height: 480px;
 }
 
+.accordion-scroll-fix:target + #replayparser-content {
+  height: 250px;
+}
+
+.accordion-scroll-fix:target + #replaytools-content {
+  height: 205px;
+}
+
+.accordion-scroll-fix:target + #versionswitcher-content {
+  height: 275px;
+}
+
+.accordion-scroll-fix:target + #coh2org-content {
+  height: 375px;
+}
+
 .accordion-scroll-fix:target + .project-content-bottom {
   border-bottom: 5px solid $clr-accent;
   height: 400px;
@@ -60,6 +68,10 @@
 .column {
   margin: 0 auto;
   width: $column-width;
+}
+
+.content {
+  padding: 250px 75px 50px 75px;
 }
 
 .label-tech {

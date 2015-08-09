@@ -82,23 +82,9 @@ nav {
 /* ID styles */
 /*************/
 
-#photo-headshot {
-  border: 0 none;
-  border-radius: 50%;
-  height: 160px;
-  position: relative;
-  width: 160px;
-  vertical-align: middle;
-  z-index: 2;
-}
 
-#topbar {
-  background: $clr-bg-bar;
-  border-bottom: 2px solid $clr-accent;
-  height: 150px;
-  min-width: $viewport-width;
-  width: 100%;
-}
+
+
 
 /****************/
 /* Class styles */
@@ -236,6 +222,16 @@ nav {
   width: $viewport-width;
 }
 
+.photo-headshot {
+  border: 0 none;
+  border-radius: 50%;
+  height: 160px;
+  position: relative;
+  width: 160px;
+  vertical-align: middle;
+  z-index: 2;
+}
+
 .photo-wrapper {
   background: $clr-accent-alt;
   border-radius: 50%;
@@ -247,6 +243,14 @@ nav {
   top: -85px;
   width: 160px;
   z-index: 1;
+}
+
+.topbar {
+  background: $clr-bg-bar;
+  border-bottom: 2px solid $clr-accent;
+  height: 150px;
+  min-width: $viewport-width;
+  width: 100%;
 }
 
 /*****************/
