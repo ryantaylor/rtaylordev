@@ -2,19 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=960">
     <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="/css/main.min.css">
-    <title>ryan taylor - 404</title>
+    <title>ryan taylor</title>
   </head>
   <body>
     <noscript>
-      <div id="no-js">This site works best with Javascript enabled!</div>
+      <div class="no-js">This site works best with Javascript enabled!</div>
     </noscript>
-    <div id="wrapper">
+    <div class="wrapper">
       <header>
-        <div id="topbar">
+        <div class="topbar">
           <div class="header-wrapper">
             <h1 class="header-left">my name is <span class="emphasis">ryan taylor</span></h1>
             <h1 class="header-right">and i write</h1>
@@ -32,7 +34,7 @@
         </div>
         <div class="nav-wrapper">
           <div class="photo-wrapper">
-            <img id="photo-headshot" alt="headshot" src="/img/photo.jpg">
+            <img class="photo-headshot" alt="headshot" src="/img/photo.jpg">
           </div>
           <nav>
             <ul>
@@ -46,13 +48,225 @@
         </div>
       </header>
 
-      <section id="content">
+      <section class="content">
         <div class="column center">
-          <span class="coming-soon">Coming soon!</span>
+          <h2>Projects</h2>
+          <span class="divider"></span>
+          <div class="project-container-top">
+            <a class="accordion-anchor" href="#rtaylordev">
+              <div class="project-header">
+                <div class="project-type-personal">personal</div>
+                <div class="project-date">ongoing</div>
+                <div class="project-name">ryantaylordev.ca</div>
+                <div class="project-control"><div>+</div></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="rtaylordev"></div>
+            <div class="project-content" id="rtaylordev-content">
+              <div class="project-content-main">
+                <p class="project-content-text">This site isn't just a landing pad for my project work; it's a fully-fledged project all on its own, written from scratch as an exercise in traditional web design and development. As a multidisciplinary programmer interested in full-stack development, this site provides an excellent platform for testing new ideas and refining old ones.</p>
+                <p class="project-content-text">When I set out to create a personal website, my primary goal was to avoid the use of third-party code whenever possible. With the exception of node.js and some core modules such as express, <a href="http://ryantaylordev.ca">ryantaylordev.ca</a> is an entirely unique, custom project, with features like lightweight Javascript form validation and this accordion, which is entirely Javascript-free. It is hosted on a self-managed VPS running Ubuntu 14.04 x64, nginx, node.js, and Postfix, which gives me freedom to experiment with server infrastructure and improve my administration skills. </p>
+                <p class="project-content-text">For a more in-depth look at the site's various custom elements, feel free to peruse the code on Github.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#thingtracker">
+              <div class="project-header">
+                <div class="project-type-personal">personal</div>
+                <div class="project-date">ongoing</div>
+                <div class="project-name">thingtracker</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="thingtracker"></div>
+            <div class="project-content" id="thingtracker-content">
+              <div class="project-content-main">
+                <p class="project-content-text">This in-progress Android project started out as an idea put forth by a friend, who wanted an easy-to-use way to look up where the food he eats comes from while shopping at the grocery store. The core application incorporates a barcode scanner and interfaces with a MongoDB database via an API written with <a href="http://mcavage.me/node-restify/">restify</a> in node.js.</p>
+                <p class="project-content-text">Though still in the early stages of development, the hope for this project is to expand its database of food products enough so that the app is useful when out shopping in the downtown Toronto area.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#replayparser">
+              <div class="project-header">
+                <div class="project-type-personal">personal</div>
+                <div class="project-date">2014</div>
+                <div class="project-name">coh2replayparser</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="replayparser"></div>
+            <div class="project-content" id="replayparser-content">
+              <div class="project-content-main">
+                <p class="project-content-text">This project is an updated version of <a href="http://www.gamereplays.org/community/index.php?showtopic=813678">pingtoft's Company of Heroes replay parser</a> ported to PHP for use on <a href="http://coh2.org">COH2.ORG</a>. It parses CoH2 replay files byte-by-byte and pulls as much information as possible. Because the CoH replay format is not open source, I was forced to reverse-engineer much of the replay structure used in this parser by analyzing hex data in multiple replay files by hand.</p>
+                <p class="project-content-text">This code is currently being used in the wild by COH2.ORG to power their <a href="http://coh2.org/replay">replays section</a>. I also have plans to port it to Javascript for use in a future node.js project.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#replaytools">
+              <div class="project-header">
+                <div class="project-type-personal">personal</div>
+                <div class="project-date">2013</div>
+                <div class="project-name">coh2replaytools</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="replaytools"></div>
+            <div class="project-content" id="replaytools-content">
+              <div class="project-content-main">
+                <p class="project-content-text">A Windows application written in C# and using a C# version of <a href="#replayparser">my CoH2 replay parser</a>, this project was envisioned as a rich GUI frontend for my parser code. I started working at IBI a few months after I began coding this, however, and it was never completed.</p>
+                <p class="project-content-text">In the future, I plan on taking the code from this and my other CoH-based projects and combining it all into a multi-purpose web application for gathering, organizing, and displaying Company of Heroes replay data.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#versionswitcher">
+              <div class="project-header">
+                <div class="project-type-personal">personal</div>
+                <div class="project-date">2013</div>
+                <div class="project-name">coh2replayversionswitcher</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="versionswitcher"></div>
+            <div class="project-content" id="versionswitcher-content">
+              <div class="project-content-main">
+                <p class="project-content-text">This is a simple C# application I wrote to work around a flaw in the Company of Heroes replay versioning system, where replays were only listed in-game if the encoded version matched the game version installed. This was a problem during periods of frequent hotfixing, because some patches would hide replay files that worked perfectly fine.</p>
+                <p class="project-content-text">This application works by modifying the first two bytes of the replay file to encode the game version required to make the replay files show up in the in-game file browser. Since patch frequency in CoH2 has decreased considerably, this functionality is not really needed anymore, and this project is no longer actively maintained.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#coh2org">
+              <div class="project-header">
+                <div class="project-type-collaboration">collaboration</div>
+                <div class="project-date">2013-2014</div>
+                <div class="project-name">coh2.org</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="coh2org"></div>
+            <div class="project-content" id="coh2org-content">
+              <div class="project-content-main">
+                <p class="project-content-text">As the largest unofficial Company of Heroes fansite, <a href="http://coh2.org">COH2.ORG</a> is maintained by a small team of volunteer coders. It is written in PHP using the <a href="http://www.yiiframework.com/">Yii framework</a> with MySQL, and a frontend powered by jQuery and custom CSS.</p>
+                <p class="project-content-text">As a member of the coding team, I was responsible for the development of a number of backend features. The site's <a href="http://coh2.org/replay">replay section</a> is powered by <a href="#replayparser">my replay parser</a>, while the <a href="http://coh2.org/ladders">ladder section</a> runs code I wrote to consume a third-party JSON API and display aggregated as well as individualized results. I also assisted with layout and wrote Javascript for a number of widgets, such as the sidebar ladder widget and the event countdown timer. Coordination with team members across timezones and continents was made possible with a combination of subversion, git, and GitLab.</p>
+                <p class="project-content-text">I still contribute to the project occassionally, but other personal and professional projects leave little time for meaningful additions.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#bccancer">
+              <div class="project-header">
+                <div class="project-type-collaboration">collaboration</div>
+                <div class="project-date">2013</div>
+                <div class="project-name">bc cancer agency patient call tracking</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="bccancer"></div>
+            <div class="project-content" id="bccancer-content">
+              <div class="project-content-main">
+                <p class="project-content-text">In 2013, as a senior at UBC (<a href="http://gothunderbirds.ca/">go Thunderbirds!</a>), I worked together with a small team of students on the design and development of a web application to be used by the BC Cancer Agency for tracking patient inquiries regarding cancer medication and treatment. My responsibilities within the team included requirements illicitation and organization as well as backend development work in C# within an ASP.NET MVC framework, and some frontend layout work with <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+                <p class="project-content-text">This project was my first taste of real software development, and gave me an invaluable look at taking a software project from the requirements phase straight through to delivery. Being responsible for the requirements of the entire project made me acutely aware of the importance of clear, concise communication with clients, and gave me experience that would prove extremely valuable as I went on to start my professional career.</p>
+                <p class="project-content-text">Unfortunately, I no longer have access to the source code for this project, and while parts of it are currently being used by the BC Cancer Agency, none of it is publically accessible. I do, however, have a copy of the Software Requirements Specification document that I was responsible for producing with the assistance of my teammates; it can be downloaded here.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#crescent">
+              <div class="project-header">
+                <div class="project-type-professional">professional</div>
+                <div class="project-date">ongoing</div>
+                <div class="project-name">crescent traffic management system</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="crescent"></div>
+            <div class="project-content">
+              <div class="project-content-main"></div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#dublin">
+              <div class="project-header">
+                <div class="project-type-professional">professional</div>
+                <div class="project-date">ongoing</div>
+                <div class="project-name">dublin nra traffic management system</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="dublin"></div>
+            <div class="project-content">
+              <div class="project-content-main"></div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#yosemite">
+              <div class="project-header">
+                <div class="project-type-professional">professional</div>
+                <div class="project-date">2014-2015</div>
+                <div class="project-name">yosemite traffic management system</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="yosemite"></div>
+            <div class="project-content">
+              <div class="project-content-main"></div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#vvm">
+              <div class="project-header">
+                <div class="project-type-professional">professional</div>
+                <div class="project-date">2013</div>
+                <div class="project-name">vacationvillamanager.com</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="vvm"></div>
+            <div class="project-content-bottom">
+              <div class="project-content-main"></div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div id="push"></div>
+      <div class="push"></div>
     </div>
 
     <footer>© ryan taylor 2015</footer>
