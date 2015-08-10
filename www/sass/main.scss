@@ -18,14 +18,14 @@ a {
   color: lighten($clr-main, 20%);
   text-decoration: none;
   transition: color 0.25s ease 0s;
-}
 
-a:hover {
-  color: $clr-neutral;
-}
+  &:hover {
+    color: $clr-neutral;
 
-a:hover > .icon {
-  fill: $clr-main;
+    & > .icon {
+      fill: $clr-main;
+    }
+  }
 }
 
 b {
@@ -67,22 +67,22 @@ h3 {
   transition: background 0.5s ease 0s, border-color 0.5s ease 0s;
   vertical-align: middle;
   width: auto;
-}
 
-.btn:hover {
-  background: $clr-main;
-  border-color: $clr-neutral;
-}
+  &:hover {
+    background: $clr-main;
+    border-color: $clr-neutral;
+  }
 
-.btn-fixed {
-  @extend .btn;
-  margin-top: 20px;
-  width: 90px;
-}
+  &-fixed {
+    @extend .btn;
+    margin-top: 20px;
+    width: 90px;
 
-.btn-fixed:hover {
-  background: $clr-main;
-  border-color: $clr-neutral;
+    &:hover {
+      background: $clr-main;
+      border-color: $clr-neutral;
+    }
+  }
 }
 
 .center {
@@ -110,18 +110,18 @@ h3 {
   color: $clr-main;
 }
 
-.fa-hero {
+%fa-hero {
   font-size: 300px;
   padding: 25px;
 }
 
 .fa-hero-success {
-  @extend .fa-hero;
+  @extend %fa-hero;
   color: #093;
 }
 
 .fa-hero-fail {
-  @extend .fa-hero;
+  @extend %fa-hero;
   color: $clr-main;
 }
 

@@ -53,15 +53,19 @@ body {
   height: 100%;
   margin: 0 auto -60px;
   width: $viewport-width;
+
+  @media (max-width: $viewport-width) {
+    background: $clr-bg-content;
+  }
 }
 
 /*****************/
 /* Media queries */
 /*****************/
 
-@media (max-width: $viewport-width) {
+/* @media (max-width: $viewport-width) {
   .wrapper {
     background: $clr-bg-content;
   }
-}
+} */
 

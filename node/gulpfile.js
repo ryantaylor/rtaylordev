@@ -30,6 +30,20 @@ gulp.task( 'sass:watch', function () {
   gulp.watch( '../www/sass/**/*.scss', ['sass'] );
 });
 
+gulp.task( 'sass:debug', function () {
+  gulp.src( '../www/sass/main.scss' )
+      .pipe( logger({
+        before: '[debug] compiling scss...',
+        after: '[debug] scss compile complete',
+        extname: '.css',
+        display: 'name',
+        showChange: true
+      }) )
+      .pipe( sass( { outputStyle: 'nested' } ).on( 'error', sass.logError ) )
+      .pipe( rename( 'main.css' ) )
+      .pipe( gulp.dest( '../www/css' ) );
+});
+
 gulp.task( 'uglify', function () {
   gulp.src( '../www/js/val.js' )
       .pipe( logger({
