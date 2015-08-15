@@ -44,6 +44,22 @@
     height: 375px;
   }
 
+  &:target + #crescent-content {
+    height: 380px;
+  }
+
+  &:target + #dublin-content {
+    height: 380px;
+  }
+
+  &:target + #yosemite-content {
+    height: 360px;
+  }
+
+  &:target + #vvm-content {
+    height: 460px;
+  }
+
   &:target + .project-content-bottom {
     border-bottom: 5px solid $clr-accent;
     height: 400px;
