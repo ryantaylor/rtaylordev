@@ -39,7 +39,7 @@ app.post( '/webhooks/rtaylordev', function ( req, res ) {
         if ( error == null )
           res.status( 200 ).send( stdout + stderr );
         else
-          res.status( 500 ).send( 'There was an issue pulling from the repository\nData was not updated' );
+          res.status( 500 ).send( 'There was an issue pulling from the repository\nData was not updated\n' + error );
       });
     }
     else
