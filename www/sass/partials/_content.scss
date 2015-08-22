@@ -198,6 +198,33 @@
     position: absolute;
     top: 0;
   }
+
+  &-tech {
+    color: $clr-content;
+    font: {
+      family: $font-family-alt;
+      size: 1.2em;
+    }
+    list-style-type: none;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 5px 5px $clr-accent;
+
+    li {
+      border-bottom: 2px solid $clr-accent;
+      height: 25px;
+      padding: 5px;
+      transition: color 0.25s ease 0s;
+
+      &.last {
+        border-bottom: none;
+      }
+
+      &:hover {
+        color: $clr-main;
+      }
+    }
+  }
 }
 
 %project-type {
@@ -206,6 +233,7 @@
   color: $clr-neutral;
   height: 100%;
   left: 0;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 120px;

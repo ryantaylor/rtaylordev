@@ -85,6 +85,90 @@ h3 {
   }
 }
 
+.btn-project {
+  $btn-height: 50px;
+
+  background: transparent;
+  border-top: 5px solid $clr-accent;
+  color: $clr-neutral;
+  cursor: pointer;
+  display: inline-block;
+  font: {
+    family: $font-family-base;
+    size: 1.5em;
+  }
+  height: $btn-height;
+  line-height: 60px;
+  position: absolute;
+  transition: background 0.5s ease 0s, color 0.5s ease 0s;
+  text-align: center;
+  width: 100%;
+
+  &-rtaylordev {
+    @extend .btn-project;
+    top: $prj-height-rtaylordev - $btn-height - 10px;
+  }
+
+  &-thingtracker {
+    @extend .btn-project;
+    top: $prj-height-thingtracker - $btn-height - 10px;
+  }
+
+  &-replayparser {
+    @extend .btn-project;
+    top: $prj-height-replayparser - $btn-height - 10px;
+  }
+
+  &-replaytools {
+    @extend .btn-project;
+    top: $prj-height-replaytools - $btn-height - 10px;
+  }
+
+  &-versionswitcher {
+    @extend .btn-project;
+    top: $prj-height-versionswitcher - $btn-height - 10px;
+  }
+
+  &-vvm {
+    &-github {
+      @extend .btn-project;
+      top: $prj-height-vvm - $btn-height - 5px;
+    }
+
+    &-site {
+      @extend .btn-project;
+      line-height: 50px;
+      top: $prj-height-vvm - ( $btn-height * 2 ) - 10px;
+
+      &:hover {
+        //background: $clr-neutral !important;
+        color: $clr-logo-vvm;
+      }
+    }
+    
+  }
+
+  &-coh2org {
+    @extend .btn-project;
+    background: $clr-neutral;
+    top: $prj-height-coh2org - $btn-height - 10px;
+
+    &:hover {
+      background: $clr-content !important;
+    }
+  }
+
+  &-bccancer {
+    @extend .btn-project;
+    line-height: 45px;
+    top: $prj-height-bccancer - $btn-height - 10px;
+  }
+
+  &:hover {
+    background: $clr-accent;
+  }
+}
+
 .center {
   text-align: center;
 }
@@ -125,12 +209,33 @@ h3 {
   color: $clr-main;
 }
 
+.logo {
+  &-github {
+    height: 50%;
+    width: 50%;
+  }
+
+  &-vvm {
+    font: {
+      family: $font-family-logo-vvm;
+      size: 1.2em;
+    }
+  }
+}
+
 .icon {
   fill: $clr-content;
   height: 64px;
   margin: 5px;
   transition: fill 0.5s ease 0s;
   width: 64px;
+
+  &-pdf {
+    fill: $clr-main;
+    height: 32px;
+    margin-bottom: -7px;
+    width: 32px;
+  }
 }
 
 .icon-bar {
