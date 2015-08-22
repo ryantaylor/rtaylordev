@@ -141,7 +141,6 @@ h3 {
       top: $prj-height-vvm - ( $btn-height * 2 ) - 10px;
 
       &:hover {
-        //background: $clr-neutral !important;
         color: $clr-logo-vvm;
       }
     }
@@ -209,20 +208,6 @@ h3 {
   color: $clr-main;
 }
 
-.logo {
-  &-github {
-    height: 50%;
-    width: 50%;
-  }
-
-  &-vvm {
-    font: {
-      family: $font-family-logo-vvm;
-      size: 1.2em;
-    }
-  }
-}
-
 .icon {
   fill: $clr-content;
   height: 64px;
@@ -241,4 +226,18 @@ h3 {
 .icon-bar {
   margin: 0 auto;
   padding-top: 50px;
+}
+
+.logo {
+  &-github {
+    height: 50%;
+    width: 50%;
+  }
+
+  &-vvm {
+    font: {
+      family: $font-family-logo-vvm;
+      size: 1.2em;
+    }
+  }
 }
