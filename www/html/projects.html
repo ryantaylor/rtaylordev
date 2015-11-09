@@ -110,27 +110,52 @@
             </div>
           </div>
           <div class="project-container">
-            <a class="accordion-anchor" href="#replayparser">
+            <a class="accordion-anchor" href="#vault">
               <div class="project-header">
                 <div class="project-type-personal">personal</div>
-                <div class="project-date">2014</div>
-                <div class="project-name">coh2replayparser</div>
+                <div class="project-date">ongoing</div>
+                <div class="project-name">vault</div>
                 <div class="project-control"><span>+</span></div>
               </div>
             </a>
-            <div class="accordion-scroll-fix" id="replayparser"></div>
-            <div class="project-content" id="replayparser-content">
+            <div class="accordion-scroll-fix" id="vault"></div>
+            <div class="project-content" id="vault-content">
               <div class="project-content-main">
-                <p class="project-content-text">This project is an updated version of <a href="http://www.gamereplays.org/community/index.php?showtopic=813678">pingtoft's Company of Heroes replay parser</a> ported to PHP for use on <a href="http://coh2.org">COH2.ORG</a>. It parses CoH2 replay files byte-by-byte and pulls as much information as possible. Because the CoH replay format is not open source, I was forced to reverse-engineer much of the replay structure used in this parser by analyzing hex data in multiple replay files by hand.</p>
-                <p class="project-content-text">This code is currently being used in the wild by COH2.ORG to power their <a href="http://coh2.org/replay">replays section</a>. I also have plans to port it to Javascript for use in a future node.js project.</p>
+                <p class="project-content-text">This project started out as an updated version of <a href="http://www.gamereplays.org/community/index.php?showtopic=813678">pingtoft's Company of Heroes replay parser</a> that I wrote in PHP for use on <a href="http://coh2.org">COH2.ORG</a>. I recently rewrote it in <a href="https://www.rust-lang.org/">Rust</a>, an emerging systems programming language with compile-time memory safety guarantees, and released it as an open source library on <a href="https://crates.io/crates/vault">crates.io</a>. The rewrite leverages Rust's powerful concurrency capabilities and exposes a C-like interface to external callers, making it usable in higher-level languages like Python and Javascript. It parses CoH2 replay files byte-by-byte and pulls as much information as possible. Because the CoH replay format is not open source, I was forced to reverse-engineer much of the replay structure used in this parser by analyzing hex data in multiple replay files by hand.</p>
+                <p class="project-content-text">This code is currently being used in the wild by COH2.ORG to power their <a href="http://coh2.org/replay">replays section</a>. I also have plans to incorporate the library into a node.js-driven web application as a custom module.</p>
               </div>
               <div class="project-content-side">
                 <div class="label-tech">tech</div>
                 <ul class="project-tech" class="project-tech">
+                  <li>Rust</li>
                   <li>PHP</li>
                   <li class="last">C#</li>
                 </ul>
-                <a class="btn-project-replayparser" href="https://github.com/ryantaylor/coh2replayparser"><img class="logo-github" src="/img/github-logo.svg"></a>
+                <a class="btn-project-vault" href="https://github.com/ryantaylor/vault"><img class="logo-github" src="/img/github-logo.svg"></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-container">
+            <a class="accordion-anchor" href="#flank">
+              <div class="project-header">
+                <div class="project-type-personal">personal</div>
+                <div class="project-date">ongoing</div>
+                <div class="project-name">flank</div>
+                <div class="project-control"><span>+</span></div>
+              </div>
+            </a>
+            <div class="accordion-scroll-fix" id="flank"></div>
+            <div class="project-content" id="flank-content">
+              <div class="project-content-main">
+                <p class="project-content-text">Originally written as a proof-of-concept and test application for my <a href="#vault">vault</a> parser, flank has been extended to provide developer-specific testing information and JSON-formatted output of Company of Heroes 2 replay files. Though mainly used to test and verify the functionality of the vault library, flank can also be used in real-world applications by consuming the JSON it generates. This is the method by which <a href="http://coh2.org/replay">COH2.ORG</a> incorporates vault into their replay parsing workflow.</p>
+                <p class="project-content-text">Written in Rust, flank is a relatively simple command line application that wraps the vault library to provide replay parsing, and formats the output based on flags passed to it when invoked.</p>
+              </div>
+              <div class="project-content-side">
+                <div class="label-tech">tech</div>
+                <ul class="project-tech" class="project-tech">
+                  <li class="last">Rust</li>
+                </ul>
+                <a class="btn-project-flank" href="https://github.com/ryantaylor/flank"><img class="logo-github" src="/img/github-logo.svg"></a>
               </div>
             </div>
           </div>

@@ -126,9 +126,14 @@ h3 {
     top: $prj-height-thingtracker - $btn-height - 10px;
   }
 
-  &-replayparser {
+  &-vault {
     @extend .btn-project;
-    top: $prj-height-replayparser - $btn-height - 10px;
+    top: $prj-height-vault - $btn-height - 10px;
+  }
+
+  &-flank {
+    @extend .btn-project;
+    top: $prj-height-flank - $btn-height - 10px;
   }
 
   &-replaytools {
